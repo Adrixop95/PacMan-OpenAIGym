@@ -7,8 +7,15 @@
 - [libjpeg-turbo](https://sourceforge.net/projects/libjpeg-turbo/)
 
 ### Wymagane biblioteki pip3
-- gym
+- gym[atari]
+  - Instalacja dla Windows:
+    - pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
+    - pip install git+https://github.com/Kojoley/atari-py.git
+
 - numpy
+  - Instalacja dla Windows:
+    - pip install numpy
+    
 - incremental
 - universe
 
