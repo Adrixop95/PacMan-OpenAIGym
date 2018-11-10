@@ -1,32 +1,45 @@
 # Uczenie maszynowe do gry PacMan za pomocą OpenAI Gym
 
-## Instalacja środowiska dla Microsoft Windows 10
-### Wymagane oprogramowanie
-- [Python 3.7](https://python.org)
-- [Pip3](https://pip.pypa.io/en/stable/installing/#do-i-need-to-install-pip)
+## Instalacja (Ubuntu 18.10)
 
-### Wymagane biblioteki pip3
+### Ubuntu library
+- python3-numpy 
+- python3-dev 
+- cmake 
+- zlib1g-dev 
+- libjpeg-dev 
+- xvfb 
+- xorg-dev 
+- python3-opengl 
+- libboost-all-dev 
+- libsdl2-dev 
+- swig
+
+### Pip
+- gym
 - gym[atari]
-  - Instalacja dla Windows:
-    - pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
-    - pip install git+https://github.com/Kojoley/atari-py.git
-
+- tensorflow
+- numpy
+- matplotlib
 
 ## Uruchamianie
 
-- python doc_sample.py
+- python [nazywa_skryptu].py
 
 ## Podgląd
 Alfa 0.1 (przepisanie kodu z dokumentacji OpenAI Gym)  
 <img src="/graphics/prev1.gif?raw=true">  
 
+Alfa 0.2 (Uczenie bazowane na DQN)
+<img src="//graphics/prev2.png?raw=true">  
 
 ## Źródła i uznania twórczości
 [Day 22: How to build an AI Game Bot using OpenAI Gym and Universe
 ](https://medium.freecodecamp.org/how-to-build-an-ai-game-bot-using-openai-gym-and-universe-f2eb9bfbb40a)  
 [OpenAI Docs](https://gym.openai.com/docs/)  
 [OpenAI Env](https://gym.openai.com/envs/)  
-
+[Handson-ml](https://github.com/ageron/handson-ml)  
+Hands on Machine Learning with Scikit Learn and Tensorflow by By Aurélien Géron  
 
 Made with 😺 and 💝,  
 by Laura Dymarczyk, Adrian Rupala
