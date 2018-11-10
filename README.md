@@ -1,7 +1,10 @@
 # Uczenie maszynowe do gry PacMan za pomocą OpenAI Gym
 
-## Instalacja (Ubuntu 18.10)
+## Instalacja (Ubuntu 18.04 lub późniejsze)
 
+Wystarczy użyć gotowego skryptu znajdującego się w folderze /scripts projektu aby zainstalować wszystkie wymagane paczki.  
+
+## Lista paczek:
 ### Ubuntu library
 - python3-numpy 
 - python3-dev 
@@ -14,6 +17,7 @@
 - libboost-all-dev 
 - libsdl2-dev 
 - swig
+- python3-tk
 
 ### Pip
 - gym
@@ -30,8 +34,8 @@
 Alfa 0.1 (przepisanie kodu z dokumentacji OpenAI Gym)  
 <img src="/graphics/prev1.gif?raw=true">  
 
-Alfa 0.2 (Uczenie bazowane na DQN)
-<img src="//graphics/prev2.png">  
+Alfa 0.2 (Uczenie bazowane na DQN)  
+![](/graphics/prev2.png)
 
 ## Źródła i uznania twórczości
 [Day 22: How to build an AI Game Bot using OpenAI Gym and Universe
