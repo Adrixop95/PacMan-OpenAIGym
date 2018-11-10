@@ -31,7 +31,7 @@ Alfa 0.1 (przepisanie kodu z dokumentacji OpenAI Gym)
 <img src="/graphics/prev1.gif?raw=true">  
 
 Alfa 0.2 (Uczenie bazowane na DQN)
-<img src="//graphics/prev2.png?raw=true">  
+<img src="//graphics/prev2.png">  
 
 ## Źródła i uznania twórczości
 [Day 22: How to build an AI Game Bot using OpenAI Gym and Universe
