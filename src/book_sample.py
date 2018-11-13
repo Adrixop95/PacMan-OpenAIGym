@@ -1,3 +1,4 @@
+# coding=utf-8
 # This solution is based on book "Hands on Machine Learning with Scikit Learn and Tensorflow by By Aurélien Géron"
 # https://github.com/ageron/handson-ml
 
