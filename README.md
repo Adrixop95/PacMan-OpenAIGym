@@ -1,41 +1,31 @@
 # Uczenie maszynowe do gry PacMan za pomocą OpenAI Gym
 
-## Instalacja (Ubuntu 18.04 lub późniejsze)
+## Instalacja (Ubuntu 18.04 lub późniejsze, Windows Subsystem for Linux)
 
-Wystarczy użyć gotowego skryptu znajdującego się w folderze /scripts projektu aby zainstalować wszystkie wymagane paczki.  
+Wystarczy użyć gotowego skryptu znajdującego się w folderze /scripts projektu, aby zainstalować wszystkie wymagane paczki.  
 
-## Lista paczek:
-### Ubuntu library
-- python3-numpy 
-- python3-dev 
-- cmake 
-- zlib1g-dev 
-- libjpeg-dev 
-- xvfb 
-- xorg-dev 
-- python3-opengl 
-- libboost-all-dev 
-- libsdl2-dev 
-- swig
-- python3-tk
+W przypadku Windows Subsystem for Linux (dla podsystemu Ubuntu) należy doinstalować aplikację [vcxsrv](https://sourceforge.net/projects/vcxsrv/) emulującą X Server dla systemów Windows oraz wykonać komendę (można dopisać ją na końcu pliku .bashrc znajdującego się w katalogu domowym użytkownika).
 
-### Pip
-- gym
-- gym[atari]
-- tensorflow
-- numpy
-- matplotlib
+```bash
+export DISPLAY=localhost:0.0
+```
+Następnie należy podczas uruchamiania aplikacji [vcxsrv](https://sourceforge.net/projects/vcxsrv/) wybrać następujące opcje:
+
+``` bash
+- Multiple windows
+- Start no client
+- Clipboard, Primary selection (odznaczyć Native opengl)
+```
+Po wykonaniu powyższych kroków można wykonać skrypy instalacyjny znajdujący się w folderze /scripts, który to doinstaluje wszystkie potrzebne paczki oraz biblioteki do systemu.
 
 ## Uruchamianie
 
-- python [nazywa_skryptu].py
+- cd src/learning
+- python3 pacman_learning.py
 
 ## Podgląd
-Alfa 0.1 (przepisanie kodu z dokumentacji OpenAI Gym)  
-<img src="/graphics/prev1.gif?raw=true">  
-
-Alfa 0.2 (Uczenie bazowane na DQN)  
-![](/graphics/prev2.png)
+v0.9
+<img src="/graphics/pacman.gif?raw=true">  
 
 ## Źródła i uznania twórczości
 [Day 22: How to build an AI Game Bot using OpenAI Gym and Universe
