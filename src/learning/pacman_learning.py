@@ -17,26 +17,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' #Fix error with AVX2 FMA CPU instructio
 def reset_graph(seed=42):
     tf.reset_default_graph()
     tf.set_random_seed(seed)
-
-# To plot pretty figures and animations
-import matplotlib
-import matplotlib.animation as animation
-import matplotlib.pyplot as plt
-plt.rcParams['axes.labelsize'] = 14
-plt.rcParams['xtick.labelsize'] = 12
-plt.rcParams['ytick.labelsize'] = 12
-
-# Where to save the figures
-PROJECT_ROOT_DIR = "/home/adrox/GitHub/PacMan-OpenAIGym/src"
-CHAPTER_ID = "rl"
-
-def save_fig(fig_id, tight_layout=True):
-    path = os.path.join(PROJECT_ROOT_DIR, "images", CHAPTER_ID, fig_id + ".png")
-    print("Saving figure", fig_id)
-    if tight_layout:
-        plt.tight_layout()
-    plt.savefig(path, format='png', dpi=300)
-    
+  
 env = gym.make("MsPacman-v0")
 obs = env.reset()
 

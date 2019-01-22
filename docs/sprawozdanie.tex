@@ -1,0 +1,186 @@
+\documentclass[a4paper, 12pt]{mwrep}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{gensymb}
+\usepackage{float}
+\usepackage{movie15}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage[polish]{babel}
+\usepackage[cp1250]{inputenc}
+\usepackage[T1]{polski}
+\usepackage[T1]{fontenc}
+
+\usepackage{fourier} %Roman+math - Utopia
+\usepackage[scaled=.92]{helvet} %Sans serif - Helvetica
+\usepackage{courier} %Monospace - Courier
+
+\newtheorem{twierdzenie}{Twierdzenie}[chapter]
+\newtheorem{lemat}[twierdzenie]{Lemat}
+\newtheorem{wniosek}[twierdzenie]{Wniosek}
+
+\theoremstyle{definition}
+\newtheorem{definicja}[twierdzenie]{Definicja}
+
+\theoremstyle{remark}
+\newtheorem{przyklad}[twierdzenie]{Przyk³ad}
+\newtheorem{uwaga}[twierdzenie]{Uwaga}
+
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\SetKwInput{KwIn}{Wejœcie}
+\SetKwInput{KwOut}{Wyjœcie}
+\renewcommand{\algorithmcfname}{Algorytm}
+\SetKw{KwAnd}{and}
+
+\begin{document}
+\renewcommand{\tablename}{Tabela}
+	\begin{titlepage}
+		\begin{center}
+			{\sc \Large Uniwersytet Œl¹ski
+			
+			Instytut Informatyki}
+			
+			\vfill
+			
+			{\Large Laura Dymarczyk, Adrian Rupala}
+			
+			\mbox{}
+			
+			{\bf \huge Uczenie maszynowe do gry PacMan za pomoc¹ OpenAI Gym}
+			
+			\mbox{}
+			
+			{\large (projekt zaliczeniowy ze sztucznej inteligencja w grach komputerowych)}
+			
+			\vfill
+			
+			Sosnowiec 2019
+		\end{center}
+	\end{titlepage}
+	
+	%**************************************************************************
+	\chapter{Wstêp}
+	
+	Uczenie maszynowe oraz sztuczna inteligencja to jeden z najgorêtszych tematów pojawiaj¹cych siê na ustach wielu firm. G³ównym celem uczenia maszynowego jest praktyczne zastosowanie dokonañ w dziedzinie sztucznej inteligencji do stworzenia autonomicznego systemu umiej¹cego doskonaliæ siê przy pomocy zgromadzonych doœwiadczeñ i nabywania na tej podstawie nowej wiedzy. Ma ono zapewniæ efektywnoœæ, wydajnoœæ, bezawaryjnoœæ produktu.
+	
+	Uczenie maszynowe jest aktualnie mocno powi¹zane z grami wideo. Pocz¹wszy od pierwszej serii zwyciêstw w latach 1952-1962 w turniejach szachowych, przechodz¹c do aktualnych osi¹gniêæ superkomputera Watson firmy IBM, który to jest w stanie wygraæ telewizyjne teleturnieje, pokonuj¹c dwóch najlepszych graczy w historii.
+	
+	Aktualnymi projektami firm zajmuj¹cych siê uczeniem maszynowym s¹ systemy pokonuj¹ce profesjonalnych graczy esportowych w danych grach. Jednym z takich przyk³adów mo¿e zostaæ firma Google tworz¹ca oraz ucz¹ca specjaln¹ sieæ neuronow¹ graj¹c¹ w grê Starcraft 2 przy u¿yciu technologii DeepMind (Rysunek 1.1).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{sc2_ml}
+		\caption{Starcraft 2 DeepMind}
+	\end{figure}
+	
+	%**************************************************************************
+	\chapter{Teoria i algorytmy}
+	
+	Aktualnie na rynku istnieje wiele bibliotek oraz rozwi¹zañ oferuj¹cych uczenie maszynowe w grach komputerowych. Dwoma najpopularniejszymi oraz najbardziej rozwijanymi projektami Open Source s¹ w³aœnie zastosowane przez nas w projekcie Tensorflow, oraz OpenAI Gym.\\
+	
+	W naszym projekcie wykorzystaliœmy uczenie maszynowe ze wzmocnieniem. W przeciwieñstwie do klasyfikacji oraz regresji, jego celem nie jest aproksymacja pewnego nieznanego odwzorowania przez generalizacjê zbioru. Systemowi ucz¹cemu siê ze wzmocnieniem nie s¹ dostarczane ¿adne przyk³ady trenuj¹ce a jedynie wartoœciuj¹ca informacja oceniaj¹ca jego skutecznoœæ. Cel uczenia poœrednio okreœlony jest przez wartoœci wzmocnienia. W przypadku tej aplikacji zosta³ wykorzystany algorytm Q-learning. Jest to technika uczenia maszynowego która mówi agentowi jakie dzia³ania ma podj¹æ w okreœlonych okolicznoœciach. Q-learning mo¿e zidentyfikowaæ optymalne rozwi¹zanie, bior¹c pod uwagê nieskoñczony czas poszukiwania. Wartoœæ ,,Q'' oznacza funkcjê, która zwraca ,,nagrodê' któr¹ mo¿na okreœliæ jako nagrodê dzia³ania podjêtego w danym stanie. \\
+	
+	Podczas tworzenia projekt zdecydowaliœmy siê na wykorzystanie biblioteki OpenAI Gym (Rysunek 2.1) dostarczaj¹cej wiele œrodowisk ucz¹cych. Pozwala ona na emulowanie, miêdzy innymi danej gry w pe³ni legalny sposób oraz interakcjê z jej œrodowiskiem bez koniecznoœci modyfikowania gry.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{ml1}
+		\caption{OpenAI Gym Atari ze œrodowiskiem MsPacman}
+	\end{figure}
+
+	Biblioteka Tensorflow zosta³a wykorzystana do zbudowania sieci neuronowej, której g³ównym zadaniem by³a obserwacja wysy³ania oraz odbierania informacji o akcjach, które s¹ w danej chwili wykonywane. Aby wybraæ, jak¹ akcjê w danej chwili PacMan ma wykonaæ, sieæ neuronowa na pocz¹tku okreœla prawdopodobieñstwo ka¿dej z akcji, a nastêpnie wybiera akcjê losowo zgodnie z oszacowanym prawdopodobieñstwem. Na przyk³ad, PacMan mo¿e iœæ w jednym z czterech kierunków, istnieje wiêc szansa, ¿e znajduj¹c siê w rogu planszy dalej bêdzie próbowa³ ,,wejœæ w œcianê' poniewa¿ prawdopodobieñstwo ruchu jest takie samo dla ruchu w ka¿dym z kierunków.
+	
+	Modyfikuj¹c wartoœci ,,Q'' z algorytmu Q-learning jesteœmy w stanie wp³ywaæ na proces uczenia siê oraz jego jakoœæ. Z przeprowadzonych przez nas badañ wynika, ¿e im wiêksz¹ wartoœæ ,,Q'' wprowadzimy do programu tym PacMan lepiej oraz efektywniej bêdzie w stanie uczyæ siê. Oczywiœcie ca³y proces zale¿y równie¿ od innych wartoœci, miêdzy innymi ca³kowitej iloœci kroków uczenia, w przypadku naszego doœwiadczenia wynosi³a ona 4000000 z za³o¿eniem, ¿e PacMan ma dopiero zapisywaæ postêp uczenia od 10000 kroku. Równie¿ nasza skrypt pomija pocz¹tkowe oczekiwanie 90 sekund na pocz¹tek gry w celu oszczêdzenia ca³kowitego czasu uczenia. Czas uczenia zale¿ny jest równie¿ od mo¿liwoœci urz¹dzanie na jakim uruchamiamy projekt. Nasze testy zosta³y przeprowadzone na komputerze wyposa¿onym w procesor Intel Core i7-8700, 16GB pamiêci ram DDR4 oraz ca³oœæ by³a zapisywana oraz przetwarzana na dysku podpiêtym do interfejsu x4 PCIe 3.0 NVM-e. Nasze testy równie¿ zosta³y przeprowadzone dla trzech okreœlonych wartoœci ,,Q'': 0.99 (d¹¿¹cym do maksymalnego 1), 0.5 (wartoœæ ,,œrednia') oraz 0.01 (wartoœæ najmniejsza). \\
+	
+	Jesteœmy w stanie zaobserwowaæ, ¿e dla wartoœci ,,Q'' równiej 0.01 dla wczeœniej okreœlonej iloœci kroków program traci ,,motywacjê'' do uczenia siê (Rysunek 2.2). Oznacza to, ¿e niska wartoœæ nagrody nie jest w stanie odpowiednio stymulowaæ sieci neuronowej do dalszych, lepszych dzia³añ i poprawiania swoich osi¹gniêæ. Po osi¹gniêciu okreœlonej iloœci kroków PacMan porusza siê, lecz dalej robi to w chaotyczny sposób, nie jest w stanie okreœliæ swoich zachowañ ani w sensowny sposób unikaæ przeciwników czy zbieraæ rozrzuconych po mapie bonusów.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{qmin}
+		\caption{,,Q'' równa 0.01}
+	\end{figure}
+
+	Wzrost zainteresowania uczeniem przejawia wartoœæ ,,Q'' równa 0.5 (Rysunek 2.3). Sieæ neuronowa z tak¹ wartoœci¹ jest odpowiednio pobudzona, aby kontynuowaæ proces uczenia. Równie¿ jesteœmy w stanie zaobserwowaæ, ¿e po osi¹gniêciu najlepszych wyników dla danej zachêty sieæ neuronowa wykorzystywa³a ju¿ zdobyt¹ przez siebie wiedzê, wykorzystuj¹c j¹ do gry, zamiast kontynuowaæ proces uczenia. Idealnie reprezentuje to malej¹cy wykres pod koniec procesu uczenia. Skok w przedziale 3000000 kroków spowodowany jest wyst¹pieniem nowej zmiennej - PacMan przeszed³ do nowej planszy, lecz sieæ neuronowa by³a w stanie okreœliæ i zastosowaæ znane ju¿ rozwi¹zania z powodu wystêpowania dalej tych samych przeciwników oraz bonusów.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{qavr}
+		\caption{,,Q'' równa 0.5}
+	\end{figure}
+
+	Ostatnim doœwiadczeniem by³o ustawienie wartoœci ,,Q'' na wartoœæ 0.99, czyli nasz¹ wartoœæ maksymaln¹. Jesteœmy w stanie zaobserwowaæ, ¿e nasza sieæ ci¹gle pobudzana du¿¹ wartoœci¹ jest w stanie ci¹gle znajdowaæ now¹ potrzebê oraz ,,motywacjê'' do uczenia siê. Odpowiednio stymulowana sieæ jest w stanie ci¹gle poszukiwaæ nowych rozwi¹zañ nawet na znanym jej ju¿ œrodowisku. Na wykresie jesteœmy w stanie zauwa¿yæ spadki dla poszczególnych przedzia³ów. S¹ one w tym przypadku spowodowane wykorzystywaniem znanych ju¿ rozwi¹zañ, lecz gdy zmieni siê przynajmniej jedna ze zmiennych, proces uczenia na nowo zostaje uruchomiony.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{qmax}
+		\caption{,,Q'' równa 0.5}
+	\end{figure}
+
+	Chcielibyœmy równie¿ zaznaczyæ, ¿e ze wzglêdu, i¿ do uczenia zosta³o wykorzystane prywatne urz¹dzenie, by³o ono eksploatowane w trakcie procesu uczenia, co równie¿ mog³o mieæ wp³yw na ostateczny wynik ze wzglêdu na ró¿ne zu¿ycie podzespo³ów i obci¹¿enie ich innymi zadaniami. Ca³kowity proces uczenia dla 4000000 kroków wynosi³ w ka¿dym przypadku oko³o 55 godzin, przy czym ka¿da zmiana zwi¹zana z sieci¹ neuronow¹ wymusza³a ponawianie ca³oœci uczenia od nowa. Istnieje mo¿liwoœæ uruchomienia biblioteki Tensorflow na kartach graficznych Nvidia GeForce oraz Quadro posiadaj¹cych rdzenie CUDA, lecz ze wzglêdu na brak odpowiedniego sprzêtu komputerowego nasz algorytm wykorzystuje uczenie wykorzystuj¹ce procesor komputera.
+	
+	%**************************************************************************
+	\chapter{Opis programu}
+	
+	Program zosta³ napisany w jêzyku Python 3.6 z wykorzystaniem biblioteki Tensorflow oraz OpenAI Gym Atari. Do uruchomienia programu potrzebne s¹ odpowiednio zainstalowane oraz skonfigurowane wy¿ej wymienione biblioteki wraz z innymi pakietami systemowymi. 
+	
+	Aby u³atwiæ przygotowanie potrzebnych bibliotek dla systemów opartych na dystrybucji Debian GNU/Linux w tym Ubuntu GNU/Linux zosta³ równie¿ przygotowany skrypt instalacyjny, który po wywo³aniu instaluje wszystkie potrzebne biblioteki oraz pakiety systemowe.
+
+	Do edycji kodu Ÿród³owego zosta³ wykorzystany program Visual Studio Code wraz z zainstalowanym dodatkiem Microsoft Python.
+	
+	%--------------------------------------------------------------------------
+	\section{Mo¿liwoœci programu}
+	
+	Program po uruchomieniu automatycznie i samodzielnie uczy siê graæ w grê MsPacman. Program równie¿ zapisuje oraz odczytuje stan gry po wy³¹czeniu aplikacji. 
+
+	%--------------------------------------------------------------------------
+	\section{Opis programu}
+	
+	Aplikacja zosta³a przygotowana z myœl¹ o wywo³aniu jej z poziomu pow³oki Bash. W celu uruchomienia aplikacji nale¿y uruchomiæ konsolê, a nastêpnie przejœæ do folderu z aplikacj¹ za pomoc¹ komendy \texttt{\$ cd sciezka/do/pliku}. Gdy znajdujemy siê w katalogu z programem, aby uruchomiæ aplikacjê, nale¿y u¿yæ polecenia \texttt{\$ python3 pacman\_learning.py}.
+	
+	Aby uruchomiæ plik postinstalacyjny maj¹cy na celu przygotowaæ wszystkie potrzebne biblioteki nale¿y przejœæ do katalogu \texttt{scripts}, nadaæ uprawnienia do wykonywania pliku za pomoc¹ polecenia \texttt{\$ chmod +x post.sh} a nastêpnie wykonaæ skrypt za pomoc¹ komendy \texttt{./post.sh}. Skrypt do dzia³ania wymaga podania has³a administratora ze wzglêdu na instalacjê bibliotek z ró¿nych repozytoriów.
+	
+	Istnieje mo¿liwoœæ uruchomienia aplikacji w œrodowisku Windows Subsystem for Linux (dla podsystemu Ubuntu) (Rysunek 3.1). W tym celu nale¿y zainstalowaæ dodatkowo aplikacjê \texttt{vcxsrv} emuluj¹c¹ X Server dla systemów Windows oraz po uruchomieniu podsystemu nale¿y wykonaæ komendê\\ \texttt{\$ export DISPLAY=localhost:0.0}, która to umo¿liwia wyexportowanie wyœwietlanego obrazu na zewnêtrzny system (Windows 10). Nale¿y jednak pamiêtaæ, aby wczeœniej uruchomiæ aplikacjê \texttt{vcxsrv} z nastêpuj¹cymi parametrami:
+	\begin{itemize}
+		\item Multiple windows
+		\item Start no client
+		\item Clipboard, Primary selection (odznaczyæ Native opengl)
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{win10}
+		\caption{Dzia³aj¹cy, gotowy program na systemie Windows 10}
+	\end{figure}
+	
+	%**************************************************************************
+	\begin{thebibliography}{99}		
+		\bibitem{} Machine Learning [ENG] - Wikipedia \\
+		\href{https://en.wikipedia.org/wiki/Machine_learning}{https://en.wikipedia.org/wiki/Machine\_learning} \\
+		
+		\bibitem{} Dokumentacja Python 3 \\
+		\href{https://docs.python.org/3/}{https://docs.python.org/3/} \\
+		
+		\bibitem{} Dokumentacja Tensorflow \\
+		\href{https://www.tensorflow.org/api_docs/}{https://www.tensorflow.org/api\_docs/} \\
+		
+		\bibitem{} Dokumentacja OpenAI Gym \\
+		\href{https://gym.openai.com/}{https://gym.openai.com/} \\
+		
+		\bibitem{} Dokumentacja OpenAI Gym Atari \\
+		\href{https://gym.openai.com/envs/#atari}{https://gym.openai.com/envs/\#atari}\\
+		
+		\bibitem{} Uczenie siê ze wzmocnieniem \\
+		\href{http://wazniak.mimuw.edu.pl/index.php?title=Sztuczna\_inteligencja/SI\_Modu\%C5\%82\_13\_-\_Uczenie\_si\%C4\%99_ze_wzmocnieniem}{http://wazniak.mimuw.edu.pl}\\
+		
+		\bibitem{} Day 22: How to build an AI Game Bot using OpenAI Gym and Universe \\
+		\href{https://medium.freecodecamp.org/how-to-build-an-ai-game-bot-using-openai-gym-and-universe-f2eb9bfbb40a}{https://medium.freecodecamp.org/}\\
+		
+		\bibitem{} Aurélien Géron: Hands-On Machine Learning with Scikit-Learn and TensorFlow (March 2017)\\
+		
+	\end{thebibliography}
+\end{document}
