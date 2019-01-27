@@ -1,0 +1,507 @@
+Placeholder
+truediv/y
+truediv
+q_networks/online/conv2d/kernel/Initializer/truncated_normal/shape
+q_networks/online/conv2d/kernel/Initializer/truncated_normal/mean
+q_networks/online/conv2d/kernel/Initializer/truncated_normal/stddev
+q_networks/online/conv2d/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/online/conv2d/kernel/Initializer/truncated_normal/mul
+q_networks/online/conv2d/kernel/Initializer/truncated_normal
+q_networks/online/conv2d/kernel
+q_networks/online/conv2d/kernel/Assign
+q_networks/online/conv2d/kernel/read
+q_networks/online/conv2d/bias/Initializer/zeros
+q_networks/online/conv2d/bias
+q_networks/online/conv2d/bias/Assign
+q_networks/online/conv2d/bias/read
+q_networks/online/conv2d/dilation_rate
+q_networks/online/conv2d/Conv2D
+q_networks/online/conv2d/BiasAdd
+q_networks/online/conv2d/Relu
+q_networks/online/conv2d_1/kernel/Initializer/truncated_normal/shape
+q_networks/online/conv2d_1/kernel/Initializer/truncated_normal/mean
+q_networks/online/conv2d_1/kernel/Initializer/truncated_normal/stddev
+q_networks/online/conv2d_1/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/online/conv2d_1/kernel/Initializer/truncated_normal/mul
+q_networks/online/conv2d_1/kernel/Initializer/truncated_normal
+q_networks/online/conv2d_1/kernel
+q_networks/online/conv2d_1/kernel/Assign
+q_networks/online/conv2d_1/kernel/read
+q_networks/online/conv2d_1/bias/Initializer/zeros
+q_networks/online/conv2d_1/bias
+q_networks/online/conv2d_1/bias/Assign
+q_networks/online/conv2d_1/bias/read
+q_networks/online/conv2d_1/dilation_rate
+q_networks/online/conv2d_1/Conv2D
+q_networks/online/conv2d_1/BiasAdd
+q_networks/online/conv2d_1/Relu
+q_networks/online/conv2d_2/kernel/Initializer/truncated_normal/shape
+q_networks/online/conv2d_2/kernel/Initializer/truncated_normal/mean
+q_networks/online/conv2d_2/kernel/Initializer/truncated_normal/stddev
+q_networks/online/conv2d_2/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/online/conv2d_2/kernel/Initializer/truncated_normal/mul
+q_networks/online/conv2d_2/kernel/Initializer/truncated_normal
+q_networks/online/conv2d_2/kernel
+q_networks/online/conv2d_2/kernel/Assign
+q_networks/online/conv2d_2/kernel/read
+q_networks/online/conv2d_2/bias/Initializer/zeros
+q_networks/online/conv2d_2/bias
+q_networks/online/conv2d_2/bias/Assign
+q_networks/online/conv2d_2/bias/read
+q_networks/online/conv2d_2/dilation_rate
+q_networks/online/conv2d_2/Conv2D
+q_networks/online/conv2d_2/BiasAdd
+q_networks/online/conv2d_2/Relu
+q_networks/online/Reshape/shape
+q_networks/online/Reshape
+q_networks/online/dense/kernel/Initializer/truncated_normal/shape
+q_networks/online/dense/kernel/Initializer/truncated_normal/mean
+q_networks/online/dense/kernel/Initializer/truncated_normal/stddev
+q_networks/online/dense/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/online/dense/kernel/Initializer/truncated_normal/mul
+q_networks/online/dense/kernel/Initializer/truncated_normal
+q_networks/online/dense/kernel
+q_networks/online/dense/kernel/Assign
+q_networks/online/dense/kernel/read
+q_networks/online/dense/bias/Initializer/zeros
+q_networks/online/dense/bias
+q_networks/online/dense/bias/Assign
+q_networks/online/dense/bias/read
+q_networks/online/dense/MatMul
+q_networks/online/dense/BiasAdd
+q_networks/online/dense/Relu
+q_networks/online/dense_1/kernel/Initializer/truncated_normal/shape
+q_networks/online/dense_1/kernel/Initializer/truncated_normal/mean
+q_networks/online/dense_1/kernel/Initializer/truncated_normal/stddev
+q_networks/online/dense_1/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/online/dense_1/kernel/Initializer/truncated_normal/mul
+q_networks/online/dense_1/kernel/Initializer/truncated_normal
+q_networks/online/dense_1/kernel
+q_networks/online/dense_1/kernel/Assign
+q_networks/online/dense_1/kernel/read
+q_networks/online/dense_1/bias/Initializer/zeros
+q_networks/online/dense_1/bias
+q_networks/online/dense_1/bias/Assign
+q_networks/online/dense_1/bias/read
+q_networks/online/dense_1/MatMul
+q_networks/online/dense_1/BiasAdd
+truediv_1/y
+truediv_1
+q_networks/target/conv2d/kernel/Initializer/truncated_normal/shape
+q_networks/target/conv2d/kernel/Initializer/truncated_normal/mean
+q_networks/target/conv2d/kernel/Initializer/truncated_normal/stddev
+q_networks/target/conv2d/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/target/conv2d/kernel/Initializer/truncated_normal/mul
+q_networks/target/conv2d/kernel/Initializer/truncated_normal
+q_networks/target/conv2d/kernel
+q_networks/target/conv2d/kernel/Assign
+q_networks/target/conv2d/kernel/read
+q_networks/target/conv2d/bias/Initializer/zeros
+q_networks/target/conv2d/bias
+q_networks/target/conv2d/bias/Assign
+q_networks/target/conv2d/bias/read
+q_networks/target/conv2d/dilation_rate
+q_networks/target/conv2d/Conv2D
+q_networks/target/conv2d/BiasAdd
+q_networks/target/conv2d/Relu
+q_networks/target/conv2d_1/kernel/Initializer/truncated_normal/shape
+q_networks/target/conv2d_1/kernel/Initializer/truncated_normal/mean
+q_networks/target/conv2d_1/kernel/Initializer/truncated_normal/stddev
+q_networks/target/conv2d_1/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/target/conv2d_1/kernel/Initializer/truncated_normal/mul
+q_networks/target/conv2d_1/kernel/Initializer/truncated_normal
+q_networks/target/conv2d_1/kernel
+q_networks/target/conv2d_1/kernel/Assign
+q_networks/target/conv2d_1/kernel/read
+q_networks/target/conv2d_1/bias/Initializer/zeros
+q_networks/target/conv2d_1/bias
+q_networks/target/conv2d_1/bias/Assign
+q_networks/target/conv2d_1/bias/read
+q_networks/target/conv2d_1/dilation_rate
+q_networks/target/conv2d_1/Conv2D
+q_networks/target/conv2d_1/BiasAdd
+q_networks/target/conv2d_1/Relu
+q_networks/target/conv2d_2/kernel/Initializer/truncated_normal/shape
+q_networks/target/conv2d_2/kernel/Initializer/truncated_normal/mean
+q_networks/target/conv2d_2/kernel/Initializer/truncated_normal/stddev
+q_networks/target/conv2d_2/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/target/conv2d_2/kernel/Initializer/truncated_normal/mul
+q_networks/target/conv2d_2/kernel/Initializer/truncated_normal
+q_networks/target/conv2d_2/kernel
+q_networks/target/conv2d_2/kernel/Assign
+q_networks/target/conv2d_2/kernel/read
+q_networks/target/conv2d_2/bias/Initializer/zeros
+q_networks/target/conv2d_2/bias
+q_networks/target/conv2d_2/bias/Assign
+q_networks/target/conv2d_2/bias/read
+q_networks/target/conv2d_2/dilation_rate
+q_networks/target/conv2d_2/Conv2D
+q_networks/target/conv2d_2/BiasAdd
+q_networks/target/conv2d_2/Relu
+q_networks/target/Reshape/shape
+q_networks/target/Reshape
+q_networks/target/dense/kernel/Initializer/truncated_normal/shape
+q_networks/target/dense/kernel/Initializer/truncated_normal/mean
+q_networks/target/dense/kernel/Initializer/truncated_normal/stddev
+q_networks/target/dense/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/target/dense/kernel/Initializer/truncated_normal/mul
+q_networks/target/dense/kernel/Initializer/truncated_normal
+q_networks/target/dense/kernel
+q_networks/target/dense/kernel/Assign
+q_networks/target/dense/kernel/read
+q_networks/target/dense/bias/Initializer/zeros
+q_networks/target/dense/bias
+q_networks/target/dense/bias/Assign
+q_networks/target/dense/bias/read
+q_networks/target/dense/MatMul
+q_networks/target/dense/BiasAdd
+q_networks/target/dense/Relu
+q_networks/target/dense_1/kernel/Initializer/truncated_normal/shape
+q_networks/target/dense_1/kernel/Initializer/truncated_normal/mean
+q_networks/target/dense_1/kernel/Initializer/truncated_normal/stddev
+q_networks/target/dense_1/kernel/Initializer/truncated_normal/TruncatedNormal
+q_networks/target/dense_1/kernel/Initializer/truncated_normal/mul
+q_networks/target/dense_1/kernel/Initializer/truncated_normal
+q_networks/target/dense_1/kernel
+q_networks/target/dense_1/kernel/Assign
+q_networks/target/dense_1/kernel/read
+q_networks/target/dense_1/bias/Initializer/zeros
+q_networks/target/dense_1/bias
+q_networks/target/dense_1/bias/Assign
+q_networks/target/dense_1/bias/read
+q_networks/target/dense_1/MatMul
+q_networks/target/dense_1/BiasAdd
+Assign
+Assign_1
+Assign_2
+Assign_3
+Assign_4
+Assign_5
+Assign_6
+Assign_7
+Assign_8
+Assign_9
+group_deps
+train/Placeholder
+train/Placeholder_1
+train/one_hot/on_value
+train/one_hot/off_value
+train/one_hot/depth
+train/one_hot
+train/mul
+train/Sum/reduction_indices
+train/Sum
+train/sub
+train/Abs
+train/clip_by_value/Minimum/y
+train/clip_by_value/Minimum
+train/clip_by_value/y
+train/clip_by_value
+train/sub_1
+train/mul_1/x
+train/mul_1
+train/Square
+train/add
+train/Const
+train/Mean
+train/global_step/initial_value
+train/global_step
+train/global_step/Assign
+train/global_step/read
+train/gradients/Shape
+train/gradients/grad_ys_0
+train/gradients/Fill
+train/gradients/train/Mean_grad/Reshape/shape
+train/gradients/train/Mean_grad/Reshape
+train/gradients/train/Mean_grad/Shape
+train/gradients/train/Mean_grad/Tile
+train/gradients/train/Mean_grad/Shape_1
+train/gradients/train/Mean_grad/Shape_2
+train/gradients/train/Mean_grad/Const
+train/gradients/train/Mean_grad/Prod
+train/gradients/train/Mean_grad/Const_1
+train/gradients/train/Mean_grad/Prod_1
+train/gradients/train/Mean_grad/Maximum/y
+train/gradients/train/Mean_grad/Maximum
+train/gradients/train/Mean_grad/floordiv
+train/gradients/train/Mean_grad/Cast
+train/gradients/train/Mean_grad/truediv
+train/gradients/train/add_grad/Shape
+train/gradients/train/add_grad/Shape_1
+train/gradients/train/add_grad/BroadcastGradientArgs
+train/gradients/train/add_grad/Sum
+train/gradients/train/add_grad/Reshape
+train/gradients/train/add_grad/Sum_1
+train/gradients/train/add_grad/Reshape_1
+train/gradients/train/add_grad/tuple/group_deps
+train/gradients/train/add_grad/tuple/control_dependency
+train/gradients/train/add_grad/tuple/control_dependency_1
+train/gradients/train/Square_grad/Const
+train/gradients/train/Square_grad/Mul
+train/gradients/train/Square_grad/Mul_1
+train/gradients/train/mul_1_grad/Shape
+train/gradients/train/mul_1_grad/Shape_1
+train/gradients/train/mul_1_grad/BroadcastGradientArgs
+train/gradients/train/mul_1_grad/Mul
+train/gradients/train/mul_1_grad/Sum
+train/gradients/train/mul_1_grad/Reshape
+train/gradients/train/mul_1_grad/Mul_1
+train/gradients/train/mul_1_grad/Sum_1
+train/gradients/train/mul_1_grad/Reshape_1
+train/gradients/train/mul_1_grad/tuple/group_deps
+train/gradients/train/mul_1_grad/tuple/control_dependency
+train/gradients/train/mul_1_grad/tuple/control_dependency_1
+train/gradients/train/sub_1_grad/Shape
+train/gradients/train/sub_1_grad/Shape_1
+train/gradients/train/sub_1_grad/BroadcastGradientArgs
+train/gradients/train/sub_1_grad/Sum
+train/gradients/train/sub_1_grad/Reshape
+train/gradients/train/sub_1_grad/Sum_1
+train/gradients/train/sub_1_grad/Neg
+train/gradients/train/sub_1_grad/Reshape_1
+train/gradients/train/sub_1_grad/tuple/group_deps
+train/gradients/train/sub_1_grad/tuple/control_dependency
+train/gradients/train/sub_1_grad/tuple/control_dependency_1
+train/gradients/AddN
+train/gradients/train/clip_by_value_grad/Shape
+train/gradients/train/clip_by_value_grad/Shape_1
+train/gradients/train/clip_by_value_grad/Shape_2
+train/gradients/train/clip_by_value_grad/zeros/Const
+train/gradients/train/clip_by_value_grad/zeros
+train/gradients/train/clip_by_value_grad/GreaterEqual
+train/gradients/train/clip_by_value_grad/BroadcastGradientArgs
+train/gradients/train/clip_by_value_grad/Select
+train/gradients/train/clip_by_value_grad/Select_1
+train/gradients/train/clip_by_value_grad/Sum
+train/gradients/train/clip_by_value_grad/Reshape
+train/gradients/train/clip_by_value_grad/Sum_1
+train/gradients/train/clip_by_value_grad/Reshape_1
+train/gradients/train/clip_by_value_grad/tuple/group_deps
+train/gradients/train/clip_by_value_grad/tuple/control_dependency
+train/gradients/train/clip_by_value_grad/tuple/control_dependency_1
+train/gradients/train/clip_by_value/Minimum_grad/Shape
+train/gradients/train/clip_by_value/Minimum_grad/Shape_1
+train/gradients/train/clip_by_value/Minimum_grad/Shape_2
+train/gradients/train/clip_by_value/Minimum_grad/zeros/Const
+train/gradients/train/clip_by_value/Minimum_grad/zeros
+train/gradients/train/clip_by_value/Minimum_grad/LessEqual
+train/gradients/train/clip_by_value/Minimum_grad/BroadcastGradientArgs
+train/gradients/train/clip_by_value/Minimum_grad/Select
+train/gradients/train/clip_by_value/Minimum_grad/Select_1
+train/gradients/train/clip_by_value/Minimum_grad/Sum
+train/gradients/train/clip_by_value/Minimum_grad/Reshape
+train/gradients/train/clip_by_value/Minimum_grad/Sum_1
+train/gradients/train/clip_by_value/Minimum_grad/Reshape_1
+train/gradients/train/clip_by_value/Minimum_grad/tuple/group_deps
+train/gradients/train/clip_by_value/Minimum_grad/tuple/control_dependency
+train/gradients/train/clip_by_value/Minimum_grad/tuple/control_dependency_1
+train/gradients/AddN_1
+train/gradients/train/Abs_grad/Sign
+train/gradients/train/Abs_grad/mul
+train/gradients/train/sub_grad/Shape
+train/gradients/train/sub_grad/Shape_1
+train/gradients/train/sub_grad/BroadcastGradientArgs
+train/gradients/train/sub_grad/Sum
+train/gradients/train/sub_grad/Reshape
+train/gradients/train/sub_grad/Sum_1
+train/gradients/train/sub_grad/Neg
+train/gradients/train/sub_grad/Reshape_1
+train/gradients/train/sub_grad/tuple/group_deps
+train/gradients/train/sub_grad/tuple/control_dependency
+train/gradients/train/sub_grad/tuple/control_dependency_1
+train/gradients/train/Sum_grad/Shape
+train/gradients/train/Sum_grad/Size
+train/gradients/train/Sum_grad/add
+train/gradients/train/Sum_grad/mod
+train/gradients/train/Sum_grad/Shape_1
+train/gradients/train/Sum_grad/range/start
+train/gradients/train/Sum_grad/range/delta
+train/gradients/train/Sum_grad/range
+train/gradients/train/Sum_grad/Fill/value
+train/gradients/train/Sum_grad/Fill
+train/gradients/train/Sum_grad/DynamicStitch
+train/gradients/train/Sum_grad/Maximum/y
+train/gradients/train/Sum_grad/Maximum
+train/gradients/train/Sum_grad/floordiv
+train/gradients/train/Sum_grad/Reshape
+train/gradients/train/Sum_grad/Tile
+train/gradients/train/mul_grad/Shape
+train/gradients/train/mul_grad/Shape_1
+train/gradients/train/mul_grad/BroadcastGradientArgs
+train/gradients/train/mul_grad/Mul
+train/gradients/train/mul_grad/Sum
+train/gradients/train/mul_grad/Reshape
+train/gradients/train/mul_grad/Mul_1
+train/gradients/train/mul_grad/Sum_1
+train/gradients/train/mul_grad/Reshape_1
+train/gradients/train/mul_grad/tuple/group_deps
+train/gradients/train/mul_grad/tuple/control_dependency
+train/gradients/train/mul_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/dense_1/BiasAdd_grad/BiasAddGrad
+train/gradients/q_networks/online/dense_1/BiasAdd_grad/tuple/group_deps
+train/gradients/q_networks/online/dense_1/BiasAdd_grad/tuple/control_dependency
+train/gradients/q_networks/online/dense_1/BiasAdd_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/dense_1/MatMul_grad/MatMul
+train/gradients/q_networks/online/dense_1/MatMul_grad/MatMul_1
+train/gradients/q_networks/online/dense_1/MatMul_grad/tuple/group_deps
+train/gradients/q_networks/online/dense_1/MatMul_grad/tuple/control_dependency
+train/gradients/q_networks/online/dense_1/MatMul_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/dense/Relu_grad/ReluGrad
+train/gradients/q_networks/online/dense/BiasAdd_grad/BiasAddGrad
+train/gradients/q_networks/online/dense/BiasAdd_grad/tuple/group_deps
+train/gradients/q_networks/online/dense/BiasAdd_grad/tuple/control_dependency
+train/gradients/q_networks/online/dense/BiasAdd_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/dense/MatMul_grad/MatMul
+train/gradients/q_networks/online/dense/MatMul_grad/MatMul_1
+train/gradients/q_networks/online/dense/MatMul_grad/tuple/group_deps
+train/gradients/q_networks/online/dense/MatMul_grad/tuple/control_dependency
+train/gradients/q_networks/online/dense/MatMul_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/Reshape_grad/Shape
+train/gradients/q_networks/online/Reshape_grad/Reshape
+train/gradients/q_networks/online/conv2d_2/Relu_grad/ReluGrad
+train/gradients/q_networks/online/conv2d_2/BiasAdd_grad/BiasAddGrad
+train/gradients/q_networks/online/conv2d_2/BiasAdd_grad/tuple/group_deps
+train/gradients/q_networks/online/conv2d_2/BiasAdd_grad/tuple/control_dependency
+train/gradients/q_networks/online/conv2d_2/BiasAdd_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/conv2d_2/Conv2D_grad/ShapeN
+train/gradients/q_networks/online/conv2d_2/Conv2D_grad/Conv2DBackpropInput
+train/gradients/q_networks/online/conv2d_2/Conv2D_grad/Conv2DBackpropFilter
+train/gradients/q_networks/online/conv2d_2/Conv2D_grad/tuple/group_deps
+train/gradients/q_networks/online/conv2d_2/Conv2D_grad/tuple/control_dependency
+train/gradients/q_networks/online/conv2d_2/Conv2D_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/conv2d_1/Relu_grad/ReluGrad
+train/gradients/q_networks/online/conv2d_1/BiasAdd_grad/BiasAddGrad
+train/gradients/q_networks/online/conv2d_1/BiasAdd_grad/tuple/group_deps
+train/gradients/q_networks/online/conv2d_1/BiasAdd_grad/tuple/control_dependency
+train/gradients/q_networks/online/conv2d_1/BiasAdd_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/conv2d_1/Conv2D_grad/ShapeN
+train/gradients/q_networks/online/conv2d_1/Conv2D_grad/Conv2DBackpropInput
+train/gradients/q_networks/online/conv2d_1/Conv2D_grad/Conv2DBackpropFilter
+train/gradients/q_networks/online/conv2d_1/Conv2D_grad/tuple/group_deps
+train/gradients/q_networks/online/conv2d_1/Conv2D_grad/tuple/control_dependency
+train/gradients/q_networks/online/conv2d_1/Conv2D_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/conv2d/Relu_grad/ReluGrad
+train/gradients/q_networks/online/conv2d/BiasAdd_grad/BiasAddGrad
+train/gradients/q_networks/online/conv2d/BiasAdd_grad/tuple/group_deps
+train/gradients/q_networks/online/conv2d/BiasAdd_grad/tuple/control_dependency
+train/gradients/q_networks/online/conv2d/BiasAdd_grad/tuple/control_dependency_1
+train/gradients/q_networks/online/conv2d/Conv2D_grad/ShapeN
+train/gradients/q_networks/online/conv2d/Conv2D_grad/Conv2DBackpropInput
+train/gradients/q_networks/online/conv2d/Conv2D_grad/Conv2DBackpropFilter
+train/gradients/q_networks/online/conv2d/Conv2D_grad/tuple/group_deps
+train/gradients/q_networks/online/conv2d/Conv2D_grad/tuple/control_dependency
+train/gradients/q_networks/online/conv2d/Conv2D_grad/tuple/control_dependency_1
+train/q_networks/online/conv2d/kernel/Momentum/Initializer/zeros/shape_as_tensor
+train/q_networks/online/conv2d/kernel/Momentum/Initializer/zeros/Const
+train/q_networks/online/conv2d/kernel/Momentum/Initializer/zeros
+train/q_networks/online/conv2d/kernel/Momentum
+train/q_networks/online/conv2d/kernel/Momentum/Assign
+train/q_networks/online/conv2d/kernel/Momentum/read
+train/q_networks/online/conv2d/bias/Momentum/Initializer/zeros
+train/q_networks/online/conv2d/bias/Momentum
+train/q_networks/online/conv2d/bias/Momentum/Assign
+train/q_networks/online/conv2d/bias/Momentum/read
+train/q_networks/online/conv2d_1/kernel/Momentum/Initializer/zeros/shape_as_tensor
+train/q_networks/online/conv2d_1/kernel/Momentum/Initializer/zeros/Const
+train/q_networks/online/conv2d_1/kernel/Momentum/Initializer/zeros
+train/q_networks/online/conv2d_1/kernel/Momentum
+train/q_networks/online/conv2d_1/kernel/Momentum/Assign
+train/q_networks/online/conv2d_1/kernel/Momentum/read
+train/q_networks/online/conv2d_1/bias/Momentum/Initializer/zeros
+train/q_networks/online/conv2d_1/bias/Momentum
+train/q_networks/online/conv2d_1/bias/Momentum/Assign
+train/q_networks/online/conv2d_1/bias/Momentum/read
+train/q_networks/online/conv2d_2/kernel/Momentum/Initializer/zeros/shape_as_tensor
+train/q_networks/online/conv2d_2/kernel/Momentum/Initializer/zeros/Const
+train/q_networks/online/conv2d_2/kernel/Momentum/Initializer/zeros
+train/q_networks/online/conv2d_2/kernel/Momentum
+train/q_networks/online/conv2d_2/kernel/Momentum/Assign
+train/q_networks/online/conv2d_2/kernel/Momentum/read
+train/q_networks/online/conv2d_2/bias/Momentum/Initializer/zeros
+train/q_networks/online/conv2d_2/bias/Momentum
+train/q_networks/online/conv2d_2/bias/Momentum/Assign
+train/q_networks/online/conv2d_2/bias/Momentum/read
+train/q_networks/online/dense/kernel/Momentum/Initializer/zeros/shape_as_tensor
+train/q_networks/online/dense/kernel/Momentum/Initializer/zeros/Const
+train/q_networks/online/dense/kernel/Momentum/Initializer/zeros
+train/q_networks/online/dense/kernel/Momentum
+train/q_networks/online/dense/kernel/Momentum/Assign
+train/q_networks/online/dense/kernel/Momentum/read
+train/q_networks/online/dense/bias/Momentum/Initializer/zeros
+train/q_networks/online/dense/bias/Momentum
+train/q_networks/online/dense/bias/Momentum/Assign
+train/q_networks/online/dense/bias/Momentum/read
+train/q_networks/online/dense_1/kernel/Momentum/Initializer/zeros/shape_as_tensor
+train/q_networks/online/dense_1/kernel/Momentum/Initializer/zeros/Const
+train/q_networks/online/dense_1/kernel/Momentum/Initializer/zeros
+train/q_networks/online/dense_1/kernel/Momentum
+train/q_networks/online/dense_1/kernel/Momentum/Assign
+train/q_networks/online/dense_1/kernel/Momentum/read
+train/q_networks/online/dense_1/bias/Momentum/Initializer/zeros
+train/q_networks/online/dense_1/bias/Momentum
+train/q_networks/online/dense_1/bias/Momentum/Assign
+train/q_networks/online/dense_1/bias/Momentum/read
+train/Momentum/learning_rate
+train/Momentum/momentum
+train/Momentum/update_q_networks/online/conv2d/kernel/ApplyMomentum
+train/Momentum/update_q_networks/online/conv2d/bias/ApplyMomentum
+train/Momentum/update_q_networks/online/conv2d_1/kernel/ApplyMomentum
+train/Momentum/update_q_networks/online/conv2d_1/bias/ApplyMomentum
+train/Momentum/update_q_networks/online/conv2d_2/kernel/ApplyMomentum
+train/Momentum/update_q_networks/online/conv2d_2/bias/ApplyMomentum
+train/Momentum/update_q_networks/online/dense/kernel/ApplyMomentum
+train/Momentum/update_q_networks/online/dense/bias/ApplyMomentum
+train/Momentum/update_q_networks/online/dense_1/kernel/ApplyMomentum
+train/Momentum/update_q_networks/online/dense_1/bias/ApplyMomentum
+train/Momentum/update
+train/Momentum/value
+train/Momentum
+init
+save/Const
+save/SaveV2/tensor_names
+save/SaveV2/shape_and_slices
+save/SaveV2
+save/control_dependency
+save/RestoreV2/tensor_names
+save/RestoreV2/shape_and_slices
+save/RestoreV2
+save/Assign
+save/Assign_1
+save/Assign_2
+save/Assign_3
+save/Assign_4
+save/Assign_5
+save/Assign_6
+save/Assign_7
+save/Assign_8
+save/Assign_9
+save/Assign_10
+save/Assign_11
+save/Assign_12
+save/Assign_13
+save/Assign_14
+save/Assign_15
+save/Assign_16
+save/Assign_17
+save/Assign_18
+save/Assign_19
+save/Assign_20
+save/Assign_21
+save/Assign_22
+save/Assign_23
+save/Assign_24
+save/Assign_25
+save/Assign_26
+save/Assign_27
+save/Assign_28
+save/Assign_29
+save/Assign_30
+save/restore_all
+const_a
+variable_b/initial_value
+variable_b
+variable_b/Assign
+variable_b/read
+addition
+multiply
+Iteration 1	Training step 2561001/4000000 (64.0)%	Loss   inf	Mean Max-Q 0.000000   Iteration 2	Training step 2561002/4000000 (64.0)%	Loss 0.007836	Mean Max-Q 0.000000   Iteration 3	Training step 2561003/4000000 (64.0)%	Loss 0.012397	Mean Max-Q 0.000000   Iteration 4	Training step 2561004/4000000 (64.0)%	Loss 0.002791	Mean Max-Q 0.000000   Iteration 5	Training step 2561005/4000000 (64.0)%	Loss 0.002472	Mean Max-Q 0.000000   Iteration 6	Training step 2561006/4000000 (64.0)%	Loss 0.000331	Mean Max-Q 0.000000   Iteration 7	Training step 2561007/4000000 (64.0)%	Loss 3.049679	Mean Max-Q 0.000000   Iteration 8	Training step 2561008/4000000 (64.0)%	Loss 3.713389	Mean Max-Q 0.000000   Iteration 9	Training step 2561009/4000000 (64.0)%	Loss 2.689629	Mean Max-Q 0.000000   Iteration 10	Training step 2561010/4000000 (64.0)%	Loss 1.553094	Mean Max-Q 0.000000   Iteration 11	Training step 2561011/4000000 (64.0)%	Loss 1.148501	Mean Max-Q 0.000000   Iteration 12	Training step 2561012/4000000 (64.0)%	Loss 3.429775	Mean Max-Q 0.000000   Iteration 13	Training step 2561013/4000000 (64.0)%	Loss 2.984571	Mean Max-Q 0.000000   Iteration 14	Training step 2561014/4000000 (64.0)%	Loss 1.568338	Mean Max-Q 0.000000   Iteration 15	Training step 2561015/4000000 (64.0)%	Loss 2.629407	Mean Max-Q 0.000000   Iteration 16	Training step 2561016/4000000 (64.0)%	Loss 1.140241	Mean Max-Q 0.000000   Iteration 17	Training step 2561017/4000000 (64.0)%	Loss 0.758875	Mean Max-Q 0.000000   Iteration 18	Training step 2561018/4000000 (64.0)%	Loss 1.902117	Mean Max-Q 0.000000   Iteration 19	Training step 2561019/4000000 (64.0)%	Loss 1.526671	Mean Max-Q 0.000000   Iteration 20	Training step 2561020/4000000 (64.0)%	Loss 1.512178	Mean Max-Q 0.000000   Iteration 21	Training step 2561021/4000000 (64.0)%	Loss 1.885566	Mean Max-Q 0.000000   Iteration 22	Training step 2561022/4000000 (64.0)%	Loss 3.723497	Mean Max-Q 0.000000   Iteration 23	Training step 2561023/4000000 (64.0)%	Loss 2.975459	Mean Max-Q 0.000000   Iteration 24	Training step 2561024/4000000 (64.0)%	Loss 2.593722	Mean Max-Q 0.000000   Iteration 25	Training step 2561025/4000000 (64.0)%	Loss 3.480080	Mean Max-Q 0.000000   Iteration 26	Training step 2561026/4000000 (64.0)%	Loss 1.868245	Mean Max-Q 0.000000   Iteration 27	Training step 2561027/4000000 (64.0)%	Loss 2.266510	Mean Max-Q 0.000000   Iteration 28	Training step 2561028/4000000 (64.0)%	Loss 3.756368	Mean Max-Q 0.000000   Iteration 29	Training step 2561029/4000000 (64.0)%	Loss 4.511250	Mean Max-Q 0.000000   Iteration 30	Training step 2561030/4000000 (64.0)%	Loss 1.158955	Mean Max-Q 0.000000   Iteration 31	Training step 2561031/4000000 (64.0)%	Loss 1.136167	Mean Max-Q 0.000000   Iteration 32	Training step 2561032/4000000 (64.0)%	Loss 2.253410	Mean Max-Q 0.000000   Iteration 33	Training step 2561033/4000000 (64.0)%	Loss 3.003085	Mean Max-Q 0.000000   Iteration 34	Training step 2561034/4000000 (64.0)%	Loss 2.618794	Mean Max-Q 0.000000   Iteration 35	Training step 2561035/4000000 (64.0)%	Loss 2.617361	Mean Max-Q 0.000000   Iteration 36	Training step 2561036/4000000 (64.0)%	Loss 3.319813	Mean Max-Q 0.000000   Iteration 37	Training step 2561037/4000000 (64.0)%	Loss 3.360289	Mean Max-Q 0.000000   Iteration 38	Training step 2561038/4000000 (64.0)%	Loss 3.033666	Mean Max-Q 0.000000   Iteration 39	Training step 2561039/4000000 (64.0)%	Loss 2.636165	Mean Max-Q 0.000000   Iteration 40	Training step 2561040/4000000 (64.0)%	Loss 1.889305	Mean Max-Q 0.000000   Iteration 41	Training step 2561041/4000000 (64.0)%	Loss 4.547236	Mean Max-Q 0.000000   Iteration 42	Training step 2561042/4000000 (64.0)%	Loss 4.488254	Mean Max-Q 0.000000   Iteration 43	Training step 2561043/4000000 (64.0)%	Loss 3.001976	Mean Max-Q 0.000000   Iteration 44	Training step 2561044/4000000 (64.0)%	Loss 3.344161	Mean Max-Q 0.000000   Iteration 45	Training step 2561045/4000000 (64.0)%	Loss 3.632076	Mean Max-Q 0.000000   Iteration 46	Training step 2561046/4000000 (64.0)%	Loss 2.669081	Mean Max-Q 0.000000   Iteration 47	Training step 2561047/4000000 (64.0)%	Loss 1.232520	Mean Max-Q 0.000000   Iteration 48	Training step 2561048/4000000 (64.0)%	Loss 2.282240	Mean Max-Q 0.000000   Iteration 49	Training step 2561049/4000000 (64.0)%	Loss 3.027960	Mean Max-Q 0.000000   Iteration 50	Training step 2561050/4000000 (64.0)%	Loss 2.664956	Mean Max-Q 0.000000   Iteration 51	Training step 2561051/4000000 (64.0)%	Loss 2.613671	Mean Max-Q 0.000000   Iteration 52	Training step 2561052/4000000 (64.0)%	Loss 2.635327	Mean Max-Q 0.000000   Iteration 53	Training step 2561053/4000000 (64.0)%	Loss 4.470832	Mean Max-Q 0.000000   Iteration 54	Training step 2561054/4000000 (64.0)%	Loss 4.468025	Mean Max-Q 0.000000   Iteration 55	Training step 2561055/4000000 (64.0)%	Loss 3.412774	Mean Max-Q 0.000000   Iteration 56	Training step 2561056/4000000 (64.0)%	Loss 4.091907	Mean Max-Q 0.000000   Iteration 57	Training step 2561057/4000000 (64.0)%	Loss 2.986784	Mean Max-Q 0.000000   Iteration 58	Training step 2561058/4000000 (64.0)%	Loss 1.190540	Mean Max-Q 0.000000   Iteration 59	Training step 2561059/4000000 (64.0)%	Loss 3.023061	Mean Max-Q 0.000000   Iteration 60	Training step 2561060/4000000 (64.0)%	Loss 3.376114	Mean Max-Q 0.000000   Iteration 61	Training step 2561061/4000000 (64.0)%	Loss 3.348688	Mean Max-Q 0.000000   Iteration 62	Training step 2561062/4000000 (64.0)%	Loss 4.111418	Mean Max-Q 0.000000   Iteration 63	Training step 2561063/4000000 (64.0)%	Loss 3.378758	Mean Max-Q 0.000000   Iteration 64	Training step 2561064/4000000 (64.0)%	Loss 3.017443	Mean Max-Q 0.000000   Iteration 65	Training step 2561065/4000000 (64.0)%	Loss 3.357637	Mean Max-Q 0.000000   Iteration 66	Training step 2561066/4000000 (64.0)%	Loss 2.642301	Mean Max-Q 0.000000   Iteration 67	Training step 2561067/4000000 (64.0)%	Loss 1.899564	Mean Max-Q 0.000000   Iteration 68	Training step 2561068/4000000 (64.0)%	Loss 2.999464	Mean Max-Q 0.000000   Iteration 69	Training step 2561069/4000000 (64.0)%	Loss 3.391446	Mean Max-Q 0.000000   Iteration 70	Training step 2561070/4000000 (64.0)%	Loss 5.213773	Mean Max-Q 0.000000   Iteration 71	Training step 2561071/4000000 (64.0)%	Loss 4.090463	Mean Max-Q 0.000000   Iteration 72	Training step 2561072/4000000 (64.0)%	Loss 5.113334	Mean Max-Q 0.000000   Iteration 73	Training step 2561073/4000000 (64.0)%	Loss 3.409518	Mean Max-Q 0.000000   Iteration 74	Training step 2561074/4000000 (64.0)%	Loss 4.282001	Mean Max-Q 0.000000   Iteration 75	Training step 2561075/4000000 (64.0)%	Loss 2.273958	Mean Max-Q 0.000000   Iteration 76	Training step 2561076/4000000 (64.0)%	Loss 3.743116	Mean Max-Q 0.000000   Iteration 77	Training step 2561077/4000000 (64.0)%	Loss 3.055661	Mean Max-Q 0.000000   Iteration 78	Training step 2561078/4000000 (64.0)%	Loss 3.030638	Mean Max-Q 0.000000   Iteration 79	Training step 2561079/4000000 (64.0)%	Loss 4.520924	Mean Max-Q 0.000000   Iteration 80	Training step 2561080/4000000 (64.0)%	Loss 3.371255	Mean Max-Q 0.000000   Iteration 81	Training step 2561081/4000000 (64.0)%	Loss 4.806688	Mean Max-Q 0.000000   Iteration 82	Training step 2561082/4000000 (64.0)%	Loss 3.034822	Mean Max-Q 0.000000   Iteration 83	Training step 2561083/4000000 (64.0)%	Loss 3.031991	Mean Max-Q 0.000000   Iteration 84	Training step 2561084/4000000 (64.0)%	Loss 3.395293	Mean Max-Q 0.000000   Iteration 85	Training step 2561085/4000000 (64.0)%	Loss 2.654052	Mean Max-Q 0.000000   Iteration 86	Training step 2561086/4000000 (64.0)%	Loss 5.604188	Mean Max-Q 0.000000   Iteration 87	Training step 2561087/4000000 (64.0)%	Loss 2.289983	Mean Max-Q 0.000000   Iteration 88	Training step 2561088/4000000 (64.0)%	Loss 3.367626	Mean Max-Q 0.000000   Iteration 89	Training step 2561089/4000000 (64.0)%	Loss 4.477781	Mean Max-Q 0.000000   Iteration 90	Training step 2561090/4000000 (64.0)%	Loss 3.017549	Mean Max-Q 0.000000   Iteration 91	Training step 2561091/4000000 (64.0)%	Loss 3.733932	Mean Max-Q 0.000000   Iteration 92	Training step 2561092/4000000 (64.0)%	Loss 4.835125	Mean Max-Q 0.000000   Iteration 93	Training step 2561093/4000000 (64.0)%	Loss 3.026067	Mean Max-Q 0.000000   Iteration 94	Training step 2561094/4000000 (64.0)%	Loss 0.794680	Mean Max-Q 0.000000   Iteration 95	Training step 2561095/4000000 (64.0)%	Loss 3.396180	Mean Max-Q 0.000000   Iteration 96	Training step 2561096/4000000 (64.0)%	Loss 2.260867	Mean Max-Q 0.000000   Iteration 97	Training step 2561097/4000000 (64.0)%	Loss 4.871150	Mean Max-Q 0.000000   Iteration 98	Training step 2561098/4000000 (64.0)%	Loss 2.656801	Mean Max-Q 0.000000   

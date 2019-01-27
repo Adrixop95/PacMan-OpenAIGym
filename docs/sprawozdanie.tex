@@ -10,6 +10,7 @@
 \usepackage{movie15}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
+\usepackage{stackengine}
 
 \usepackage[polish]{babel}
 \usepackage[cp1250]{inputenc}
@@ -38,12 +39,12 @@
 \SetKw{KwAnd}{and}
 
 \begin{document}
-\renewcommand{\tablename}{Tabela}
+	\renewcommand{\tablename}{Tabela}
 	\begin{titlepage}
 		\begin{center}
 			{\sc \Large Uniwersytet Œl¹ski
-			
-			Instytut Informatyki}
+				
+				Instytut Informatyki}
 			
 			\vfill
 			
@@ -74,7 +75,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{sc2_ml}
+		\includegraphics[scale=0.2]{sc2_ml}
 		\caption{Starcraft 2 DeepMind}
 	\end{figure}
 	
@@ -85,6 +86,8 @@
 	
 	W naszym projekcie wykorzystaliœmy uczenie maszynowe ze wzmocnieniem. W przeciwieñstwie do klasyfikacji oraz regresji, jego celem nie jest aproksymacja pewnego nieznanego odwzorowania przez generalizacjê zbioru. Systemowi ucz¹cemu siê ze wzmocnieniem nie s¹ dostarczane ¿adne przyk³ady trenuj¹ce, a jedynie informacja o wartoœci oceniaj¹cej jego skutecznoœæ. Cel uczenia poœrednio okreœlony jest przez wartoœci wzmocnienia. W przypadku tej aplikacji zosta³ wykorzystany algorytm Q-learning. Jest to technika uczenia maszynowego która mówi agentowi jakie dzia³ania ma podj¹æ w okreœlonych okolicznoœciach. Q-learning mo¿e zidentyfikowaæ optymalne rozwi¹zanie, bior¹c pod uwagê nieskoñczony czas poszukiwania. Wartoœæ ,,Q'' oznacza funkcjê, która zwraca ,,nagrodê'', któr¹ mo¿na okreœliæ jako premiê za dzia³ania podjêtego w danym stanie. \\
 	
+	
+	
 	Podczas tworzenia projekt zdecydowaliœmy siê na wykorzystanie biblioteki OpenAI Gym (Rysunek 2.1) dostarczaj¹cej wiele œrodowisk ucz¹cych. Pozwala ona na emulowanie, miêdzy innymi danej gry w pe³ni legalny sposób oraz interakcjê z jej œrodowiskiem bez koniecznoœci modyfikowania gry.
 	
 	\begin{figure}[H]
@@ -92,35 +95,57 @@
 		\includegraphics[scale=0.3]{ml1}
 		\caption{OpenAI Gym Atari ze œrodowiskiem MsPacman}
 	\end{figure}
-
-	Biblioteka Tensorflow zosta³a wykorzystana do zbudowania sieci neuronowej, której g³ównym zadaniem by³a obserwacja wysy³ania oraz odbierania informacji o akcjach, które s¹ w danej chwili wykonywane. Aby wybraæ, jak¹ akcjê w danej chwili PacMan ma wykonaæ, sieæ neuronowa na pocz¹tku okreœla prawdopodobieñstwo ka¿dej z akcji, a nastêpnie wybiera akcjê losowo zgodnie z oszacowanym prawdopodobieñstwem. Na przyk³ad, PacMan mo¿e iœæ w jednym z czterech kierunków, istnieje wiêc szansa, ¿e znajduj¹c siê w rogu planszy dalej bêdzie próbowa³ ,,wejœæ w œcianê'', poniewa¿ prawdopodobieñstwo ruchu jest takie samo dla ruchu w ka¿dym z kierunków.
 	
-	Modyfikuj¹c wartoœci ,,Q'' z algorytmu Q-learning jesteœmy w stanie wp³ywaæ na proces uczenia siê oraz jego jakoœæ. Z przeprowadzonych przez nas badañ wynika, ¿e im wiêksz¹ wartoœæ ,,Q'' wprowadzimy do programu tym PacMan lepiej oraz efektywniej bêdzie w stanie uczyæ siê. Oczywiœcie ca³y proces zale¿y równie¿ od innych wartoœci, miêdzy innymi ca³kowitej liczby kroków uczenia, w przypadku naszego doœwiadczenia wynosi³a ona 4000000 z za³o¿eniem, ¿e PacMan ma dopiero zapisywaæ postêp uczenia od 10000 kroku. Równie¿ nasz skrypt pomija pocz¹tkowe oczekiwanie 90 sekund na pocz¹tku gry w celu oszczêdzenia ca³kowitego czasu uczenia. Czas uczenia zale¿ny jest równie¿ od mo¿liwoœci urz¹dzanie na jakim uruchamiany jest projekt. Nasze testy zosta³y przeprowadzone na komputerze wyposa¿onym w procesor Intel Core i7-8700, 16GB pamiêci ram DDR4, a ca³oœæ zapisywana by³a oraz przetwarzana na dysku podpiêtym do interfejsu x4 PCIe 3.0 NVM-e. Nasze testy równie¿ zosta³y przeprowadzone dla trzech okreœlonych wartoœci ,,Q'': 0.99 (d¹¿¹cym do maksymalnego 1), 0.5 (wartoœæ ,,œrednia') oraz 0.01 (wartoœæ najmniejsza). \\
-	
-	Jesteœmy w stanie zaobserwowaæ, ¿e dla wartoœci ,,Q'' równiej 0.01 dla wczeœniej okreœlonej iloœci kroków program traci ,,motywacjê'' do uczenia siê (Rysunek 2.2). Oznacza to, ¿e niska wartoœæ nagrody nie jest w stanie odpowiednio stymulowaæ sieci neuronowej do dalszych, lepszych dzia³añ i poprawiania swoich osi¹gniêæ. Po osi¹gniêciu okreœlonej iloœci kroków PacMan porusza siê, lecz dalej robi to w chaotyczny sposób, nie jest w stanie okreœliæ swoich zachowañ ani w sensowny sposób unikaæ przeciwników czy zbieraæ rozrzuconych po mapie bonusów.
+	Biblioteka Tensorflow zosta³a wykorzystana do zbudowania sieci neuronowej, której g³ównym zadaniem by³a obserwacja wysy³ania oraz odbierania informacji o akcjach, które s¹ w danej chwili wykonywane. Jest to sieæ neuronowa deep Q-network (DQN) posiadaj¹ca 4 warstwy - warstwê ,,Kernel'', jako najni¿sz¹ warstwê biblioteki TensorFlow, warstwê ,,prev\_layer'', której zadaniem jest przekszta³cenie danych wejœciowych, warstwê ,,hidden'' oraz ,,outputs'', jako warstwy interakcji gêsto po³¹czone ze sob¹. Wejœciowe wartoœci neuronów s¹ generowane losowo za pomoc¹ biblioteki TensorFlow. Aby wybraæ, jak¹ akcjê w danej chwili PacMan ma wykonaæ, sieæ neuronowa na pocz¹tku okreœla prawdopodobieñstwo ka¿dej z akcji (Rysunek 2.2), a nastêpnie wybiera akcjê losowo zgodnie z oszacowanym prawdopodobieñstwem. Na przyk³ad, PacMan mo¿e iœæ w jednym z czterech kierunków, istnieje wiêc szansa, ¿e znajduj¹c siê w rogu planszy dalej bêdzie próbowa³ ,,wejœæ w œcianê'', poniewa¿ prawdopodobieñstwo ruchu jest takie samo dla ruchu w ka¿dym z kierunków.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{qmin}
+		\includegraphics[scale=0.6]{rys1}
+		\caption{Struktura decyzji któr¹ mo¿e podj¹æ Pac-Man}
+	\end{figure}
+	
+	
+	Modyfikuj¹c wartoœci ,,Q'' z algorytmu Q-learning jesteœmy w stanie wp³ywaæ na proces uczenia siê oraz jego jakoœæ. Algorytm Q-learning jest przyk³adem algorytmu ucz¹cego siê funkcji wartoœci akcji. Uczy siê on optymalnej funkcji wartoœci akcji, tak aby móc uzyskaæ strategiê optymaln¹ dla danego zadania. Metoda Q-learning uczy siê reprezentowania zale¿noœci akcja-wartoœæ w postaci funkcji $Q(s,a)$. Funkcja ta wyra¿a wartoœci wykonania akcji $a$ w stanie $s$ i jest zwi¹zana z u¿ytecznoœciami stanów wzorem:\\
+	$U(s,a) = \stackanchor{max}{a} Q(s,a)$\\
+	Docelowo wartoœæ $Q$ spe³nia równanie:\\
+	$Q(s,a) = R(s) + \gamma\sum_{s'}^{} P(s'| s,a)\stackanchor{max}{$a'$} Q(s', a')$\\
+	Wzór te¿ mo¿na wykorzystaæ w celu aktualizacji wartoœci $Q$. Wymaga to jednoczesnego uczenia siê wartoœci $Q$ i modelu postaci funkcji $P$, która wystêpuje we wzorze. Algorytm Q-learning mo¿na wiêc opisaæ za pomoc¹ nastêpuj¹cej listy kroków:
+	\begin{enumerate}
+		\item Obserwacja aktualnego stanu $s$
+		\item Wybierz akcjê $a$ do wykonania w stanie $s$
+		\item Wykonaj akcjê $a$
+		\item Obserwuj wzmocnienie $R(s)$ i nastêpnie stan $s'$
+		\item $Q(s,a) = R(s) + \gamma\sum_{s'}^{} P(s'| s,a)\stackanchor{max}{$a'$} Q(s', a')$
+	\end{enumerate}
+	
+	Powy¿szy algorytm nie definiuje wyboru akcji na postawie wartoœci $Q$. Pomimo tego, ¿e do wyboru optymalnej funkcji wystarczy dowolny sposób wyboru akcji zapewniaj¹cy, ¿e ka¿da akcja zachowuje niezerowe prawdopodobieñstwo, w praktyce najlepszym wyborem s¹ rozwi¹zania faworyzuj¹ce akcje o wiêkszych wartoœciach $Q$, poniewa¿ pozwalaj¹ agentowi poprawiaæ swoje dzia³ania. W naszym przypadku algorytm ten zosta³ zaimplementowany oraz zoptymalizowany w bibliotece TensorFlow, dziêki czemu nie ma koniecznoœci ponownej implementacji kodu.\\
+	
+	Z przeprowadzonych przez nas badañ wynika, ¿e im wiêksz¹ wartoœæ ,,Q'' wprowadzimy do programu tym PacMan lepiej oraz efektywniej bêdzie w stanie siê uczyæ. Oczywiœcie ca³y proces zale¿y równie¿ od innych wartoœci, miêdzy innymi ca³kowitej liczby kroków uczenia, w przypadku naszego doœwiadczenia wynosi³a ona 4000000, z za³o¿eniem, ¿e PacMan ma dopiero zapisywaæ postêp uczenia od 10000 kroku. Równie¿ nasz skrypt pomija pocz¹tkowe oczekiwanie 90 sekund na pocz¹tku gry w celu oszczêdzenia ca³kowitego czasu uczenia. Czas uczenia zale¿ny jest równie¿ od mo¿liwoœci urz¹dzanie na jakim uruchamiany jest projekt. Nasze testy zosta³y przeprowadzone na komputerze wyposa¿onym w procesor Intel Core i7-8700, 16GB pamiêci ram DDR4, a ca³oœæ zapisywana by³a oraz przetwarzana na dysku podpiêtym do interfejsu x4 PCIe 3.0 NVM-e. Nasze testy równie¿ zosta³y przeprowadzone dla trzech okreœlonych wartoœci ,,Q'': 0.99 (d¹¿¹cym do maksymalnego 1), 0.5 (wartoœæ ,,œrednia') oraz 0.01 (wartoœæ najmniejsza). \\
+	
+	Jesteœmy w stanie zaobserwowaæ, ¿e dla wartoœci ,,Q'' równiej 0.01 dla wczeœniej okreœlonej iloœci kroków program traci ,,motywacjê'' do uczenia siê (Rysunek 2.3). Oznacza to, ¿e niska wartoœæ nagrody nie jest w stanie odpowiednio stymulowaæ sieci neuronowej do dalszych, lepszych dzia³añ i poprawiania swoich osi¹gniêæ. Po osi¹gniêciu okreœlonej iloœci kroków PacMan porusza siê, lecz dalej robi to w chaotyczny sposób, nie jest w stanie okreœliæ swoich zachowañ ani w sensowny sposób unikaæ przeciwników czy zbieraæ rozrzuconych po mapie bonusów.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.28]{wykres_min_ps}
 		\caption{,,Q'' równa 0.01}
 	\end{figure}
-
-	Wzrost zainteresowania uczeniem przejawia wartoœæ ,,Q'' równa 0.5 (Rysunek 2.3). Sieæ neuronowa z tak¹ wartoœci¹ jest odpowiednio pobudzona, aby kontynuowaæ proces uczenia. Równie¿ jesteœmy w stanie zaobserwowaæ, ¿e po osi¹gniêciu najlepszych wyników dla danej zachêty, sieæ neuronowa wykorzystywa³a ju¿ zdobyt¹ przez siebie wiedzê, wykorzystuj¹c j¹ do gry, zamiast kontynuowaæ proces uczenia. Idealnie reprezentuje to malej¹cy wykres pod koniec procesu uczenia. Skok w przedziale 3000000 kroków spowodowany jest wyst¹pieniem nowej zmiennej - PacMan przeszed³ do nowej planszy, lecz sieæ neuronowa by³a w stanie okreœliæ i zastosowaæ znane ju¿ rozwi¹zania z powodu wystêpowania dalej tych samych przeciwników oraz bonusów.
+	
+	Wzrost zainteresowania uczeniem przejawia wartoœæ ,,Q'' równa 0.5 (Rysunek 2.4). Sieæ neuronowa z tak¹ wartoœci¹ jest odpowiednio pobudzona, aby kontynuowaæ proces uczenia. Równie¿ jesteœmy w stanie zaobserwowaæ, ¿e po osi¹gniêciu najlepszych wyników dla danej zachêty, sieæ neuronowa wykorzystywa³a ju¿ zdobyt¹ przez siebie wiedzê, wykorzystuj¹c j¹ do gry, zamiast kontynuowaæ proces uczenia. Idealnie reprezentuje to malej¹cy wykres pod koniec procesu uczenia. Skok w przedziale 3000000 kroków spowodowany jest wyst¹pieniem nowej zmiennej - PacMan przeszed³ do nowej planszy, lecz sieæ neuronowa by³a w stanie okreœliæ i zastosowaæ znane ju¿ rozwi¹zania z powodu wystêpowania dalej tych samych przeciwników oraz bonusów.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{qavr}
+		\includegraphics[scale=0.28]{wykres_avr_ps}
 		\caption{,,Q'' równa 0.5}
 	\end{figure}
-
-	Ostatnim doœwiadczeniem by³o ustawienie wartoœci ,,Q'' na wartoœæ 0.99, czyli nasz¹ wartoœæ maksymaln¹. Jesteœmy w stanie zaobserwowaæ, ¿e nasza sieæ ci¹gle pobudzana du¿¹ wartoœci¹ jest w stanie ci¹gle znajdowaæ now¹ potrzebê oraz ,,motywacjê'' do uczenia siê. Odpowiednio stymulowana sieæ jest w stanie ci¹gle poszukiwaæ nowych rozwi¹zañ nawet na znanym jej ju¿ œrodowisku. Na wykresie jesteœmy w stanie zauwa¿yæ spadki dla poszczególnych przedzia³ów. S¹ one w tym przypadku spowodowane wykorzystywaniem znanych ju¿ rozwi¹zañ, lecz gdy zmieni siê przynajmniej jedna ze zmiennych, proces uczenia na nowo zostaje uruchomiony.
+	
+	Ostatnim doœwiadczeniem by³o ustawienie wartoœci ,,Q'' na wartoœæ 0.99 (Rysunek 2.5), czyli nasz¹ wartoœæ maksymaln¹. Jesteœmy w stanie zaobserwowaæ, ¿e nasza sieæ ci¹gle pobudzana du¿¹ wartoœci¹ jest w stanie ci¹gle znajdowaæ now¹ potrzebê oraz ,,motywacjê'' do uczenia siê. Odpowiednio stymulowana sieæ jest w stanie ci¹gle poszukiwaæ nowych rozwi¹zañ nawet na znanym jej ju¿ œrodowisku. Na wykresie jesteœmy w stanie zauwa¿yæ spadki dla poszczególnych przedzia³ów. S¹ one w tym przypadku spowodowane wykorzystywaniem znanych ju¿ rozwi¹zañ, lecz gdy zmieni siê przynajmniej jedna ze zmiennych, proces uczenia na nowo zostaje uruchomiony.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{qmax}
+		\includegraphics[scale=0.28]{wykres_max_ps}
 		\caption{,,Q'' równa 0.99}
 	\end{figure}
-
+	
 	Chcielibyœmy równie¿ zaznaczyæ, ¿e ze wzglêdu, i¿ do uczenia zosta³o wykorzystane prywatne urz¹dzenie, by³o ono eksploatowane w trakcie procesu uczenia, co równie¿ mog³o mieæ wp³yw na ostateczny wynik ze wzglêdu na ró¿ne zu¿ycie podzespo³ów i obci¹¿enie ich innymi zadaniami. Ca³kowity proces uczenia dla 4000000 kroków wynosi³ w ka¿dym przypadku oko³o 55 godzin, przy czym ka¿da zmiana zwi¹zana z sieci¹ neuronow¹ wymusza³a ponawianie ca³oœci uczenia od nowa. Istnieje mo¿liwoœæ uruchomienia biblioteki Tensorflow na kartach graficznych Nvidia GeForce oraz Quadro posiadaj¹cych rdzenie CUDA, lecz ze wzglêdu na brak odpowiedniego sprzêtu komputerowego nasz algorytm wykorzystuje uczenie wykorzystuj¹ce procesor komputera.
 	
 	%**************************************************************************
@@ -129,14 +154,14 @@
 	Program zosta³ napisany w jêzyku Python 3.6 z wykorzystaniem biblioteki Tensorflow oraz OpenAI Gym Atari. Do uruchomienia programu potrzebne s¹ odpowiednio zainstalowane oraz skonfigurowane wy¿ej wymienione biblioteki wraz z innymi pakietami systemowymi. 
 	
 	Aby u³atwiæ przygotowanie potrzebnych bibliotek dla systemów opartych na dystrybucji Debian GNU/Linux w tym Ubuntu GNU/Linux zosta³ równie¿ przygotowany skrypt instalacyjny, który po wywo³aniu instaluje wszystkie potrzebne biblioteki oraz pakiety systemowe.
-
+	
 	Do edycji kodu Ÿród³owego zosta³ wykorzystany program Visual Studio Code wraz z zainstalowanym dodatkiem Microsoft Python.
 	
 	%--------------------------------------------------------------------------
 	\section{Mo¿liwoœci programu}
 	
 	Program po uruchomieniu automatycznie i samodzielnie uczy siê graæ w grê MsPacman. Program równie¿ zapisuje oraz odczytuje stan gry po wy³¹czeniu aplikacji. 
-
+	
 	%--------------------------------------------------------------------------
 	\section{Opis programu}
 	

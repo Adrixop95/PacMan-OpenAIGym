@@ -159,6 +159,13 @@ total_max_q = 0
 mean_max_q = 0.0
 
 with tf.Session() as sess:
+    train_dataset = tf.placeholder(tf.int32, shape=[128, 2])
+    embeddings = tf.Variable(
+        tf.random_uniform([50000, 64], -1.0, 1.0))
+    embed = tf.nn.embedding_lookup(embeddings, train_dataset)
+    print (embed)
+
+
     if os.path.isfile(checkpoint_path + ".index"):
         saver.restore(sess, checkpoint_path)
     else:
